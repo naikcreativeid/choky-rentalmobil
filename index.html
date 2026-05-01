@@ -328,9 +328,11 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Hero right visual */
-.hero-visual { position: relative; }
+.hero-visual { position: relative; isolation: isolate; }
 
 .hero-card {
+  position: relative;
+  z-index: 1;
   background: white;
   border-radius: var(--r-2xl);
   border: 1px solid var(--slate-200);
@@ -375,6 +377,7 @@ h1, h2, h3, h4, h5 {
 /* Floating cards */
 .float-card {
   position: absolute;
+  z-index: 3;
   background: white;
   border: 1px solid var(--slate-100);
   border-radius: var(--r-lg);
@@ -403,12 +406,21 @@ h1, h2, h3, h4, h5 {
   flex-shrink: 0;
 }
 .fc-text .top-line { font-family: 'Plus Jakarta Sans'; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.1; }
-.fc-text .stars { color: var(--gold); font-size: 11px; letter-spacing: 1px; margin-bottom: 2px; }
+.fc-text .stars {
+  color: var(--gold);
+  font-size: 0;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+.fc-text .stars::before {
+  content: "\2605\2605\2605\2605\2605";
+  font-size: 11px;
+}
 .fc-text .bottom-line { font-size: 11px; color: var(--slate-500); font-weight: 500; }
 
 /* Hero thumbs */
 .hero-thumbs {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 10px; margin-top: 16px;
 }
 .thumb {
@@ -1251,6 +1263,7 @@ footer::before {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
   .hero h1 { font-size: 2.25rem; }
   .hero-desc { font-size: 16px; }
+  .hero-thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .hero-trust { gap: 20px; }
   .hero-badges { gap: 10px; }
   .float-card.top { top: 20px; left: 20px; }
@@ -1284,6 +1297,7 @@ footer::before {
   .footer-inner { grid-template-columns: 1fr; }
   .filters { gap: 6px; }
   .filter { padding: 8px 14px; font-size: 13px; }
+  .hero-thumbs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .float-card { padding: 10px 14px; }
   .float-card .top-line { font-size: 14px; }
   .fixed-wa { width: 52px; height: 52px; }
@@ -1402,8 +1416,10 @@ footer::before {
       <div class="hero-card">
         <div class="hero-img">
           <img id="heroCar"
-               src="https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=900&q=80&auto=format&fit=crop"
+               src="mobil/Haice%201200%20x%20750.webp"
                alt="Toyota Hiace Premio"
+               width="1200"
+               height="750"
                loading="eager">
           <div class="hero-img-overlay"></div>
         </div>
@@ -1437,11 +1453,15 @@ footer::before {
         </div>
         <div class="thumb" onclick="switchCar(2, this)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="9" y1="4" x2="9" y2="14"/></svg>
-          Elf
+          Mini Bus
         </div>
         <div class="thumb" onclick="switchCar(3, this)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1-6H6L5 17zm1-6l1.5-3h9L18 11M7 17v2m10-2v2"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>
           Innova
+        </div>
+        <div class="thumb" onclick="switchCar(4, this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1-6H6L5 17zm1-6l1.5-3h9L18 11M7 17v2m10-2v2"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>
+          Brio
         </div>
       </div>
     </div>
@@ -1563,7 +1583,7 @@ footer::before {
 
       <div class="car rv rv-d1" data-type="mpv">
         <div class="car-img">
-          <img src="https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=600&q=80&auto=format&fit=crop" alt="Toyota Hiace Premio" loading="lazy">
+          <img src="mobil/Haice%20800%20x%20600.webp" alt="Toyota Hiace Premio" width="800" height="600" loading="lazy">
           <div class="car-tag">Luxury</div>
         </div>
         <div class="car-body">
@@ -1583,7 +1603,7 @@ footer::before {
 
       <div class="car rv rv-d2" data-type="mpv">
         <div class="car-img">
-          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80&auto=format&fit=crop" alt="Toyota Innova" loading="lazy">
+          <img src="mobil/Innova%20800%20x%20600.webp" alt="Toyota Innova" width="800" height="600" loading="lazy">
           <div class="car-tag">Premium</div>
         </div>
         <div class="car-body">
@@ -1603,7 +1623,7 @@ footer::before {
 
       <div class="car rv rv-d3" data-type="suv">
         <div class="car-img">
-          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80&auto=format&fit=crop" alt="Toyota Rush" loading="lazy">
+          <img src="mobil/SUV%20800%20x%20600.webp" alt="Toyota Rush / Daihatsu Terios" width="800" height="600" loading="lazy">
           <div class="car-tag">SUV</div>
         </div>
         <div class="car-body">
@@ -1623,7 +1643,7 @@ footer::before {
 
       <div class="car rv rv-d1" data-type="minibus">
         <div class="car-img">
-          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80&auto=format&fit=crop" alt="Isuzu Elf" loading="lazy">
+          <img src="mobil/Mini%20Bus%20800%20x%20600.webp" alt="Isuzu Elf" width="800" height="600" loading="lazy">
           <div class="car-tag">Minibus</div>
         </div>
         <div class="car-body">
@@ -1643,12 +1663,12 @@ footer::before {
 
       <div class="car rv rv-d2" data-type="sedan">
         <div class="car-img">
-          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80&auto=format&fit=crop" alt="Honda Jazz" loading="lazy">
+          <img src="mobil/Brio%20800%20x%20600.webp" alt="Honda Brio" width="800" height="600" loading="lazy">
           <div class="car-tag">City Car</div>
         </div>
         <div class="car-body">
-          <h3>Honda Jazz</h3>
-          <p class="car-desc">City car lincah dan irit. Sempurna untuk mobilitas harian di Jakarta & Bekasi yang padat. Mudah parkir, efisien BBM.</p>
+          <h3>Honda Brio</h3>
+          <p class="car-desc">City car lincah dan hemat BBM. Cocok untuk mobilitas harian di Jakarta & Bekasi, mudah parkir, dan nyaman untuk perjalanan singkat maupun menengah.</p>
           <div class="car-specs">
             <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 4-5 Orang</div>
             <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12 2 20 7 4 7 12 2"/></svg> Sangat Irit</div>
@@ -1656,7 +1676,7 @@ footer::before {
           </div>
           <div class="car-foot">
             <div class="car-price">Hubungi Kami <small>/ hari</small></div>
-            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Honda+Jazz" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Honda+Brio" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
         </div>
       </div>
@@ -2174,12 +2194,26 @@ function switchCar(idx, btn) {
   car.style.transition = 'opacity 0.3s, transform 0.4s';
   setTimeout(() => {
     car.src = cars[idx].img;
+    car.alt = cars[idx].alt || cars[idx].name;
     name.textContent = cars[idx].name;
     sub.textContent = cars[idx].sub;
     car.style.opacity = '1';
     car.style.transform = 'scale(1)';
   }, 250);
 }
+
+cars.splice(0, cars.length,
+  { img: 'mobil/Haice%201200%20x%20750.webp', name: 'Toyota Hiace Premio', sub: '7 Kursi · Premium Van', alt: 'Toyota Hiace Premio' },
+  { img: 'mobil/SUV%201200%20x%20750.webp', name: 'Toyota Rush / Daihatsu Terios', sub: '5-7 Orang · SUV Tangguh', alt: 'Toyota Rush / Daihatsu Terios' },
+  { img: 'mobil/Mini%20Bus%201200%20x%20750.webp', name: 'Isuzu Elf', sub: '10-15 Orang · Minibus', alt: 'Isuzu Elf' },
+  { img: 'mobil/Innova%201200%20x%20750.webp', name: 'Toyota Innova', sub: '7 Orang · Premium MPV', alt: 'Toyota Innova' },
+  { img: 'mobil/Brio%201200%20x%20750.webp', name: 'Honda Brio', sub: '4-5 Orang · City Car Irit', alt: 'Honda Brio' }
+);
+
+document.getElementById('heroCar').src = cars[0].img;
+document.getElementById('heroCar').alt = cars[0].alt;
+document.getElementById('heroCarName').textContent = cars[0].name;
+document.getElementById('heroCarSub').textContent = cars[0].sub;
 
 // Mobile nav
 let mobileOpen = false;
