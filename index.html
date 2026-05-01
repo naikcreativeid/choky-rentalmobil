@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Choky Rental Solutions — sewa mobil premium Jakarta & Bekasi. Armada terawat, sopir profesional, harga transparan, layanan 24 jam.">
+<title>Choky Rental Solutions – Sewa Mobil Premium Jakarta & Bekasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Blue palette */
+  --blue-700: #0052CC;
+  --blue-600: #0066FF;
+  --blue-500: #1A8CFF;
+  --blue-400: #00A3FF;
+  --blue-200: #BBDEFB;
+  --blue-100: #E3F2FD;
+  --blue-50:  #F0F7FF;
+
+  /* Neutrals */
+  --navy:     #0A1929;
+  --navy-2:   #122A47;
+  --slate-700:#334155;
+  --slate-600:#475569;
+  --slate-500:#64748B;
+  --slate-400:#94A3B8;
+  --slate-300:#CBD5E1;
+  --slate-200:#E2E8F0;
+  --slate-100:#F1F5F9;
+  --slate-50: #F8FAFC;
+  --white:    #FFFFFF;
+
+  /* Accents */
+  --wa:       #25D366;
+  --wa-2:     #20BA5A;
+  --gold:     #FFB800;
+
+  /* Effects */
+  --shadow-xs: 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-sm: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md: 0 4px 12px rgba(15,23,42,0.06), 0 2px 4px rgba(15,23,42,0.04);
+  --shadow-lg: 0 12px 32px rgba(15,23,42,0.08), 0 4px 12px rgba(15,23,42,0.05);
+  --shadow-xl: 0 24px 48px rgba(15,23,42,0.10), 0 8px 16px rgba(15,23,42,0.06);
+  --shadow-blue: 0 12px 32px rgba(0,102,255,0.18), 0 4px 12px rgba(0,102,255,0.10);
+  --shadow-blue-lg: 0 20px 48px rgba(0,102,255,0.25);
+
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-3xl: 32px;
+
+  --gradient-bg: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%);
+  --gradient-blue: linear-gradient(135deg, #0066FF 0%, #00A3FF 100%);
+  --gradient-blue-soft: linear-gradient(135deg, rgba(0,102,255,0.08) 0%, rgba(0,163,255,0.04) 100%);
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--slate-700);
+  line-height: 1.65;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--slate-50); }
+::-webkit-scrollbar-thumb { background: var(--slate-300); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue-400); }
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+section[id] { scroll-margin-top: 96px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.container { max-width: 1280px; margin: 0 auto; }
+
+/* ─────────────── NAVBAR ─────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s var(--ease);
+}
+.nav.scrolled {
+  background: rgba(255,255,255,0.95);
+  border-bottom-color: var(--slate-100);
+  box-shadow: var(--shadow-sm);
+}
+.nav-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-mark {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--gradient-blue);
+  display: grid; place-items: center; flex-shrink: 0;
+  box-shadow: var(--shadow-blue);
+  transition: transform 0.3s var(--ease);
+}
+.logo:hover .logo-mark { transform: scale(1.05); }
+.logo-mark svg { width: 22px; height: 22px; color: white; }
+.logo-text { font-family: 'Plus Jakarta Sans'; font-size: 17px; font-weight: 800; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; }
+.logo-text span { background: var(--gradient-blue); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.logo-sub { font-size: 11px; color: var(--slate-400); font-weight: 500; letter-spacing: 0.02em; margin-top: 1px; }
+
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--slate-600);
+  text-decoration: none; padding: 8px 16px; border-radius: 8px;
+  transition: all 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--blue-600); background: var(--blue-50); }
+.nav-links .cta {
+  background: var(--gradient-blue); color: white !important;
+  font-weight: 600; padding: 10px 20px;
+  margin-left: 8px;
+  box-shadow: var(--shadow-blue);
+}
+.nav-links .cta:hover {
+  background: var(--gradient-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-blue-lg);
+}
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: rgba(0,102,255,0.08);
+  overflow: hidden;
+}
+
+.scroll-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--gradient-blue);
+  transition: width 0.12s linear;
+}
+
+.nav-burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+.nav-burger span { width: 22px; height: 2px; background: var(--navy); border-radius: 2px; transition: all 0.3s; }
+.nav-burger {
+  border: 0;
+  background: transparent;
+}
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─────────────── HERO ─────────────── */
+.hero {
+  position: relative;
+  padding: 128px 24px 96px;
+  background: var(--gradient-bg);
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 80% 20%, rgba(0,102,255,0.08), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 10% 80%, rgba(0,163,255,0.06), transparent 60%);
+  pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(0,102,255,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 60% 40% at 50% 30%, black, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 40% at 50% 30%, black, transparent 70%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.hero-grid {
+  position: relative; z-index: 1;
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 80px;
+}
+
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white;
+  border: 1px solid var(--slate-200);
+  color: var(--blue-600); font-size: 13px; font-weight: 600;
+  padding: 6px 14px 6px 8px; border-radius: 99px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-xs);
+}
+.hero-pill .dot-wrap {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: rgba(34,197,94,0.15); display: grid; place-items: center;
+}
+.hero-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; animation: pulse 2s var(--ease) infinite; }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  color: var(--navy);
+}
+.hero h1 .grad {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 18px; line-height: 1.7;
+  color: var(--slate-600);
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wa); color: white;
+  font-weight: 600; font-size: 15px;
+  padding: 14px 24px; border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.32);
+  transition: all 0.25s var(--ease);
+  border: none;
+}
+.btn-wa:hover { background: var(--wa-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.45); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white;
+  border: 1px solid var(--slate-200);
+  color: var(--navy);
+  font-weight: 600; font-size: 15px;
+  padding: 14px 24px; border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+.btn-secondary:hover { border-color: var(--blue-400); color: var(--blue-600); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.hero-trust {
+  display: flex; align-items: center; gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--slate-200);
+  flex-wrap: wrap;
+}
+.trust-num {
+  display: flex; align-items: baseline; gap: 4px;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 24px; font-weight: 800; color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.trust-num .star { color: var(--gold); font-size: 18px; }
+.trust-label { font-size: 12px; color: var(--slate-500); font-weight: 500; line-height: 1.5; margin-top: 2px; }
+.trust-divider { width: 1px; height: 36px; background: var(--slate-200); }
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--slate-200);
+  background: rgba(255,255,255,0.75);
+  box-shadow: var(--shadow-xs);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.hero-badge svg {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-600);
+}
+
+/* Hero right visual */
+.hero-visual { position: relative; }
+
+.hero-card {
+  background: white;
+  border-radius: var(--r-2xl);
+  border: 1px solid var(--slate-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.4s var(--ease-out);
+}
+.hero-card:hover { transform: translateY(-4px); }
+
+.hero-img {
+  position: relative; height: 320px;
+  background: var(--gradient-blue-soft);
+  overflow: hidden;
+}
+.hero-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.hero-card:hover .hero-img img { transform: scale(1.04); }
+
+.hero-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,25,41,0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-card-meta {
+  padding: 20px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid var(--slate-100);
+}
+.hcm-name { font-family: 'Plus Jakarta Sans'; font-size: 16px; font-weight: 700; color: var(--navy); letter-spacing: -0.01em; }
+.hcm-sub { font-size: 13px; color: var(--slate-500); margin-top: 2px; }
+.hcm-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(34,197,94,0.10);
+  color: #16A34A; font-size: 12px; font-weight: 600;
+  padding: 6px 12px; border-radius: 99px;
+}
+.hcm-status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #22C55E; }
+
+/* Floating cards */
+.float-card {
+  position: absolute;
+  background: white;
+  border: 1px solid var(--slate-100);
+  border-radius: var(--r-lg);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  animation: floaty 4s var(--ease) infinite;
+}
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+.float-card.top {
+  top: 30px; left: -32px;
+  display: flex; align-items: center; gap: 12px;
+  animation-delay: 0s;
+}
+.float-card.bottom {
+  bottom: 100px; right: -32px;
+  display: flex; align-items: center; gap: 12px;
+  animation-delay: 1s;
+}
+
+.fc-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--gradient-blue-soft);
+  color: var(--blue-600);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.fc-text .top-line { font-family: 'Plus Jakarta Sans'; font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+.fc-text .stars { color: var(--gold); font-size: 11px; letter-spacing: 1px; margin-bottom: 2px; }
+.fc-text .bottom-line { font-size: 11px; color: var(--slate-500); font-weight: 500; }
+
+/* Hero thumbs */
+.hero-thumbs {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin-top: 16px;
+}
+.thumb {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-md);
+  padding: 12px 8px;
+  text-align: center; cursor: pointer;
+  font-size: 12px; font-weight: 600; color: var(--slate-600);
+  transition: all 0.25s var(--ease);
+}
+.thumb svg { width: 24px; height: 24px; margin: 0 auto 6px; display: block; color: var(--slate-500); transition: color 0.25s var(--ease); }
+.thumb:hover, .thumb.active {
+  border-color: var(--blue-500);
+  color: var(--blue-600);
+  background: var(--blue-50);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+.thumb:hover svg, .thumb.active svg { color: var(--blue-600); }
+
+/* ─────────────── STATS BAR ─────────────── */
+.stats {
+  background: var(--navy);
+  position: relative; overflow: hidden;
+}
+.stats::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 30% 50%, rgba(0,102,255,0.18), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 80% 50%, rgba(0,163,255,0.12), transparent 70%);
+  pointer-events: none;
+}
+.stats-inner {
+  max-width: 1280px; margin: 0 auto;
+  padding: 48px 24px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px;
+  position: relative; z-index: 1;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Plus Jakarta Sans';
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800; color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.stat-num span {
+  background: linear-gradient(135deg, #00A3FF 0%, #4DC4FF 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-lbl { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+.stat-num[data-count] { font-variant-numeric: tabular-nums; }
+
+/* ─────────────── SECTION BASE ─────────────── */
+section.sec { padding: 96px 24px; }
+.sec-inner { max-width: 1280px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--blue-600);
+  margin-bottom: 16px;
+}
+.eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--gradient-blue); border-radius: 2px; }
+
+.sec-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.sec-title .grad {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec-desc { font-size: 17px; color: var(--slate-600); line-height: 1.7; max-width: 600px; }
+
+/* ─────────────── PROBLEM / SOLUTION ─────────────── */
+#masalah {
+  background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+}
+
+.ps-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start;
+  margin-top: 56px;
+}
+
+.pain-list { display: flex; flex-direction: column; gap: 16px; }
+.pain {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  transition: all 0.3s var(--ease);
+}
+.pain:hover {
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+.pain-icon {
+  width: 44px; height: 44px; border-radius: var(--r-md);
+  background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  color: #DC2626;
+}
+.pain-icon svg { width: 22px; height: 22px; }
+.pain h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.pain p { font-size: 14px; color: var(--slate-500); line-height: 1.6; }
+
+.solution {
+  background: var(--navy);
+  border-radius: var(--r-2xl);
+  padding: 40px 36px;
+  color: white;
+  position: sticky; top: 96px;
+  overflow: hidden;
+}
+.solution::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 100% 0%, rgba(0,102,255,0.30), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(0,163,255,0.18), transparent 60%);
+  pointer-events: none;
+}
+.sol-content { position: relative; z-index: 1; }
+
+.sol-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,163,255,0.15);
+  border: 1px solid rgba(0,163,255,0.3);
+  color: #4DC4FF;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 99px;
+  margin-bottom: 20px;
+}
+.sol-badge svg { width: 14px; height: 14px; }
+
+.solution h3 {
+  font-size: 28px; font-weight: 800;
+  color: white;
+  margin-bottom: 16px; line-height: 1.2;
+}
+.solution h3 .grad {
+  background: linear-gradient(135deg, #00A3FF 0%, #4DC4FF 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.solution > p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 28px; }
+
+.sol-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+.sol-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.92); line-height: 1.5; }
+.sol-check {
+  width: 22px; height: 22px; border-radius: 6px;
+  background: rgba(0,163,255,0.2);
+  border: 1px solid rgba(0,163,255,0.4);
+  display: grid; place-items: center;
+  color: #4DC4FF; flex-shrink: 0;
+  margin-top: 1px;
+}
+.sol-check svg { width: 12px; height: 12px; }
+
+.sol-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%;
+  background: var(--gradient-blue);
+  color: white; font-weight: 600; font-size: 15px;
+  padding: 14px 24px; border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 4px 16px rgba(0,102,255,0.32);
+}
+.sol-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,102,255,0.42); }
+
+/* ─────────────── ARMADA ─────────────── */
+#armada { background: white; }
+
+.fleet-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 24px; }
+
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
+.filter {
+  padding: 10px 20px; border-radius: 99px;
+  font-size: 14px; font-weight: 600;
+  border: 1px solid var(--slate-200);
+  color: var(--slate-600);
+  background: white;
+  transition: all 0.25s var(--ease);
+}
+.filter:hover { border-color: var(--blue-400); color: var(--blue-600); }
+.filter.active {
+  background: var(--gradient-blue);
+  color: white; border-color: transparent;
+  box-shadow: var(--shadow-blue);
+}
+
+.fleet-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px; margin-top: 40px;
+}
+
+.car {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+}
+.car:hover {
+  border-color: var(--blue-200);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.car-img {
+  position: relative; aspect-ratio: 4/3;
+  background: var(--gradient-blue-soft);
+  overflow: hidden;
+}
+.car-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.car:hover .car-img img { transform: scale(1.05); }
+
+.car-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,25,41,0.25) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.car-tag {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  color: var(--blue-600);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 6px 12px; border-radius: 99px;
+  box-shadow: var(--shadow-xs);
+  z-index: 1;
+}
+
+.car-body { padding: 24px; }
+.car-body h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.car-body .car-desc { font-size: 13px; color: var(--slate-500); line-height: 1.6; margin-bottom: 18px; }
+
+.car-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.spec {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--slate-600); font-weight: 500;
+  background: var(--slate-50);
+  padding: 6px 10px; border-radius: 8px;
+}
+.spec svg { width: 14px; height: 14px; color: var(--blue-500); }
+
+.car-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px; border-top: 1px solid var(--slate-100);
+}
+.car-price { font-family: 'Plus Jakarta Sans'; font-size: 15px; font-weight: 700; color: var(--navy); }
+.car-price small { font-size: 12px; color: var(--slate-400); font-weight: 500; }
+
+.car-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-50);
+  color: var(--blue-600);
+  font-size: 13px; font-weight: 600;
+  padding: 8px 16px; border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  border: 1px solid transparent;
+}
+.car-btn:hover { background: var(--gradient-blue); color: white; box-shadow: var(--shadow-blue); transform: translateX(2px); }
+.car-btn svg { width: 14px; height: 14px; transition: transform 0.25s var(--ease); }
+.car-btn:hover svg { transform: translateX(2px); }
+
+.car.custom {
+  background: linear-gradient(180deg, var(--blue-50) 0%, white 100%);
+  border-style: dashed;
+  border-color: var(--blue-200);
+}
+.car.custom .car-img {
+  display: grid; place-items: center;
+  background: transparent;
+}
+.car.custom .car-img::after { display: none; }
+.car.custom .placeholder {
+  text-align: center;
+  color: var(--blue-600);
+}
+.car.custom .placeholder svg { width: 64px; height: 64px; margin: 0 auto 12px; opacity: 0.5; }
+.car.custom .placeholder p { font-size: 13px; font-weight: 600; }
+
+/* ─────────────── KENAPA ─────────────── */
+#kenapa {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 56px;
+}
+.why {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-xl);
+  padding: 28px 24px;
+  transition: all 0.4s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.why::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+.why:hover {
+  border-color: var(--blue-200);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.why:hover::before { transform: scaleX(1); }
+
+.why-icon {
+  width: 52px; height: 52px;
+  border-radius: var(--r-md);
+  background: var(--gradient-blue-soft);
+  color: var(--blue-600);
+  display: grid; place-items: center;
+  margin-bottom: 18px;
+  transition: all 0.3s var(--ease);
+}
+.why-icon svg { width: 26px; height: 26px; }
+.why:hover .why-icon { background: var(--gradient-blue); color: white; transform: scale(1.05); box-shadow: var(--shadow-blue); }
+.why h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.why p { font-size: 14px; color: var(--slate-500); line-height: 1.65; }
+
+/* ─────────────── ULASAN ─────────────── */
+#ulasan { background: white; }
+
+.rating-summary {
+  display: flex; align-items: center; gap: 40px;
+  background: var(--navy);
+  border-radius: var(--r-2xl);
+  padding: 40px 48px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  position: relative; overflow: hidden;
+}
+.rating-summary::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 0% 50%, rgba(0,102,255,0.20), transparent 60%),
+    radial-gradient(ellipse 40% 80% at 100% 50%, rgba(0,163,255,0.14), transparent 60%);
+  pointer-events: none;
+}
+.rs-content { position: relative; z-index: 1; display: flex; align-items: center; gap: 40px; flex-wrap: wrap; width: 100%; }
+
+.big-num {
+  font-family: 'Plus Jakarta Sans';
+  font-size: 80px; font-weight: 800;
+  background: linear-gradient(135deg, #FFFFFF 0%, #BBDEFB 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1; letter-spacing: -0.04em;
+}
+.rs-detail h4 { font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px; }
+.rs-detail .stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; margin-bottom: 6px; }
+.rs-detail p { font-size: 14px; color: rgba(255,255,255,0.6); }
+
+.rs-divider { width: 1px; height: 56px; background: rgba(255,255,255,0.15); }
+
+.rs-stat { text-align: center; }
+.rs-stat .n { font-family: 'Plus Jakarta Sans'; font-size: 22px; font-weight: 800; background: linear-gradient(135deg, #00A3FF 0%, #4DC4FF 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.rs-stat .l { font-size: 11px; color: rgba(255,255,255,0.55); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+.reviews-rail { overflow: hidden; position: relative; padding: 8px 0; }
+.reviews-rail::before, .reviews-rail::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+}
+.reviews-rail::before { left: 0; background: linear-gradient(to right, white, transparent); }
+.reviews-rail::after { right: 0; background: linear-gradient(to left, white, transparent); }
+
+.reviews-track {
+  display: flex; gap: 20px;
+  animation: rail 36s linear infinite;
+  width: max-content;
+}
+.reviews-track:hover { animation-play-state: paused; }
+@keyframes rail { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.review {
+  width: 320px; flex-shrink: 0;
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  transition: all 0.3s var(--ease);
+  position: relative;
+}
+.review:hover { border-color: var(--blue-200); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.review::before {
+  content: '"';
+  position: absolute; top: 12px; right: 20px;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 60px; font-weight: 800;
+  color: var(--blue-100);
+  line-height: 1; pointer-events: none;
+}
+.r-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.r-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--gradient-blue);
+  color: white; display: grid; place-items: center;
+  font-weight: 700; font-size: 14px;
+  flex-shrink: 0;
+}
+.r-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+.r-when { font-size: 12px; color: var(--slate-400); margin-top: 1px; }
+.r-stars { color: var(--gold); font-size: 13px; letter-spacing: 1px; margin-bottom: 10px; }
+.r-text { font-size: 14px; color: var(--slate-600); line-height: 1.65; position: relative; z-index: 1; }
+
+/* ─────────────── CARA PESAN ─────────────── */
+#cara {
+  background: linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+}
+
+.steps {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; margin-top: 56px;
+  position: relative;
+}
+
+.step {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-xl);
+  padding: 32px 28px;
+  transition: all 0.4s var(--ease-out);
+  position: relative;
+}
+.step:hover {
+  border-color: var(--blue-200);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--gradient-blue);
+  color: white;
+  font-family: 'Plus Jakarta Sans';
+  font-size: 20px; font-weight: 800;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-blue);
+}
+.step h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--slate-500); line-height: 1.7; }
+
+.step-arrow {
+  position: absolute; top: 50%; right: -32px; transform: translateY(-50%);
+  width: 24px; height: 24px;
+  color: var(--blue-300, var(--blue-200));
+  display: none;
+}
+@media (min-width: 960px) {
+  .step-arrow { display: block; }
+}
+
+.bank {
+  background: white;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  margin-top: 48px;
+  max-width: 720px; margin-left: auto; margin-right: auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.bank::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient-blue);
+}
+.bank-title {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700;
+  color: var(--blue-600);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.bank-title svg { width: 16px; height: 16px; }
+
+.bank-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 16px; }
+.bank-item {
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--r-md);
+  padding: 12px 20px;
+  font-size: 14px; font-weight: 600; color: var(--navy);
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  transition: all 0.25s var(--ease);
+}
+.bank-item:hover { border-color: var(--blue-400); background: white; box-shadow: var(--shadow-sm); }
+.bank-item .b-name { font-family: 'Plus Jakarta Sans'; font-size: 13px; font-weight: 800; color: var(--blue-600); letter-spacing: 0.02em; }
+.bank-item .b-acc { font-size: 13px; color: var(--slate-600); font-weight: 500; }
+
+.bank-name {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  font-size: 13px; font-weight: 700;
+  padding: 8px 16px; border-radius: 99px;
+  margin-top: 8px;
+}
+.bank-name svg { width: 14px; height: 14px; }
+
+/* ─────────────── AREA ─────────────── */
+#area {
+  background: var(--navy);
+  color: white;
+  position: relative; overflow: hidden;
+}
+#area::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(0,102,255,0.20), transparent 60%),
+    radial-gradient(ellipse 60% 60% at 0% 100%, rgba(0,163,255,0.12), transparent 60%);
+  pointer-events: none;
+}
+#area .sec-inner { position: relative; z-index: 1; }
+#area .sec-title { color: white; }
+#area .sec-desc { color: rgba(255,255,255,0.6); }
+#area .eyebrow { color: #4DC4FF; }
+#area .eyebrow::before { background: linear-gradient(135deg, #00A3FF 0%, #4DC4FF 100%); }
+
+.areas {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px;
+}
+.area-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+  font-size: 14px; font-weight: 500;
+  padding: 10px 18px; border-radius: 99px;
+  transition: all 0.25s var(--ease);
+}
+.area-pill:hover {
+  background: rgba(0,163,255,0.15);
+  border-color: rgba(0,163,255,0.4);
+  color: #4DC4FF;
+  transform: translateY(-2px);
+}
+.area-pill svg { width: 14px; height: 14px; opacity: 0.7; }
+
+.address-card {
+  margin-top: 48px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--r-xl);
+  padding: 28px 32px;
+  display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+}
+.address-card .addr-icon {
+  width: 52px; height: 52px; border-radius: 12px;
+  background: var(--gradient-blue);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-blue);
+}
+.address-card .addr-icon svg { width: 24px; height: 24px; color: white; }
+.address-card h4 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
+.address-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.maps-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient-blue);
+  color: white;
+  font-size: 13px; font-weight: 600;
+  padding: 12px 22px; border-radius: 10px;
+  text-decoration: none;
+  margin-left: auto;
+  transition: all 0.25s var(--ease);
+  box-shadow: var(--shadow-blue);
+  white-space: nowrap;
+}
+.maps-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue-lg); }
+.maps-btn svg { width: 16px; height: 16px; }
+
+/* ─────────────── CTA ─────────────── */
+#cta { background: white; padding: 96px 24px; }
+
+.cta-box {
+  max-width: 1280px; margin: 0 auto;
+  background: var(--gradient-blue);
+  border-radius: var(--r-3xl);
+  padding: 80px 60px;
+  text-align: center;
+  position: relative; overflow: hidden;
+  color: white;
+  box-shadow: var(--shadow-blue-lg);
+}
+.cta-box::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.18), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.12), transparent 50%);
+  pointer-events: none;
+}
+.cta-box::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black, transparent 80%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.cta-content { position: relative; z-index: 1; }
+.cta-box h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; color: white;
+  letter-spacing: -0.03em; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.cta-box > .cta-content > p {
+  font-size: 17px; color: rgba(255,255,255,0.85);
+  max-width: 540px; margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+.btn-cta-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: white;
+  color: var(--blue-600);
+  font-weight: 700; font-size: 15px;
+  padding: 16px 28px; border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.btn-cta-wa:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.20); }
+
+.btn-cta-call {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: white;
+  font-weight: 600; font-size: 15px;
+  padding: 16px 28px; border-radius: 12px;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  transition: all 0.25s var(--ease);
+}
+.btn-cta-call:hover { background: rgba(255,255,255,0.20); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+
+.cta-meta {
+  display: flex; justify-content: center; gap: 28px;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.cta-meta-item {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,0.7);
+}
+.cta-meta-item svg { width: 16px; height: 16px; opacity: 0.8; }
+.cta-meta-item strong { color: white; font-weight: 600; }
+
+.cta-trust {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.cta-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.92);
+  font-size: 13px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.cta-trust-item svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ─────────────── FOOTER ─────────────── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  padding: 64px 24px 32px;
+  position: relative; overflow: hidden;
+}
+footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,163,255,0.4), transparent);
+}
+
+.footer-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.f-brand .logo { margin-bottom: 16px; }
+.f-brand .logo-text { color: white; }
+.f-brand .logo-sub { color: rgba(255,255,255,0.4); }
+.f-brand p { font-size: 14px; line-height: 1.7; max-width: 320px; color: rgba(255,255,255,0.55); }
+
+.f-socials { display: flex; gap: 8px; margin-top: 24px; }
+.f-soc {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: grid; place-items: center;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.25s var(--ease);
+}
+.f-soc:hover { background: var(--gradient-blue); color: white; border-color: transparent; transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+.f-soc svg { width: 18px; height: 18px; }
+
+.f-col h5 {
+  font-size: 13px; font-weight: 700;
+  color: white;
+  margin-bottom: 18px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+.f-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.f-col a {
+  font-size: 14px; color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+.f-col a:hover { color: #4DC4FF; }
+
+.f-bottom {
+  max-width: 1280px; margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.f-bottom span { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* ─────────────── FLOATING WHATSAPP ─────────────── */
+.fixed-wa {
+  position: fixed; bottom: 24px; right: 24px; z-index: 500;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--wa);
+  display: grid; place-items: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
+  transition: all 0.3s var(--ease);
+}
+.fixed-wa::before {
+  content: ''; position: absolute; inset: -6px;
+  border-radius: 50%; border: 2px solid rgba(37,211,102,0.4);
+  animation: ring 2s var(--ease) infinite;
+}
+@keyframes ring {
+  0% { transform: scale(0.95); opacity: 1; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+.fixed-wa svg { width: 28px; height: 28px; color: white; }
+.fixed-wa:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37,211,102,0.55); }
+
+.ripple-wrap {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: rgba(255,255,255,0.35);
+  animation: ripple 0.5s ease-out forwards;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ─────────────── REVEAL ON SCROLL ─────────────── */
+.rv { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.rv.visible { opacity: 1; transform: translateY(0); }
+.rv-d1 { transition-delay: 0.08s; }
+.rv-d2 { transition-delay: 0.16s; }
+.rv-d3 { transition-delay: 0.24s; }
+.rv-d4 { transition-delay: 0.32s; }
+.rv-d5 { transition-delay: 0.40s; }
+
+/* ─────────────── RESPONSIVE ─────────────── */
+@media (max-width: 1024px) {
+  .hero-grid { gap: 48px; }
+  .stats-inner { grid-template-columns: repeat(3, 1fr); }
+  .ps-grid { grid-template-columns: 1fr; gap: 40px; }
+  .solution { position: static; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+
+  .hero { padding: 104px 20px 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero h1 { font-size: 2.25rem; }
+  .hero-desc { font-size: 16px; }
+  .hero-trust { gap: 20px; }
+  .hero-badges { gap: 10px; }
+  .float-card.top { top: 20px; left: 20px; }
+  .float-card.bottom { bottom: 90px; right: 20px; }
+
+  .stats-inner { grid-template-columns: repeat(2, 1fr); padding: 32px 20px; gap: 20px; }
+
+  section.sec { padding: 64px 20px; }
+  .sec-title { font-size: 2rem; }
+  .sec-desc { font-size: 15px; }
+
+  .rating-summary { padding: 32px 24px; }
+  .rs-content { gap: 24px; }
+  .big-num { font-size: 64px; }
+  .rs-divider { display: none; }
+
+  .steps { grid-template-columns: 1fr; gap: 16px; }
+
+  .cta-box { padding: 56px 28px; border-radius: var(--r-2xl); }
+  .cta-trust { margin-top: 24px; }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+
+  .fleet-grid { grid-template-columns: 1fr; }
+
+  .address-card { flex-direction: column; align-items: flex-start; }
+  .maps-btn { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+  .footer-inner { grid-template-columns: 1fr; }
+  .filters { gap: 6px; }
+  .filter { padding: 8px 14px; font-size: 13px; }
+  .float-card { padding: 10px 14px; }
+  .float-card .top-line { font-size: 14px; }
+  .fixed-wa { width: 52px; height: 52px; }
+  .fixed-wa svg { width: 24px; height: 24px; }
+  .hero-badge,
+  .cta-trust-item { width: 100%; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/6281272004197?text=Halo+min,+saya+mau+tanya+tentang+rental+mobil" class="fixed-wa" target="_blank" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17l1.5-5.5a3 3 0 0 1 2.85-2.5h5.3a3 3 0 0 1 2.85 2.5L19 17M5 17v2m14-2v2M7 13h10"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+      </div>
+      <div>
+        <div class="logo-text">Choky<span>Rental</span></div>
+        <div class="logo-sub">Jakarta & Bekasi</div>
+      </div>
+    </a>
+    <ul class="nav-links" id="site-navigation">
+      <li><a href="#armada">Armada</a></li>
+      <li><a href="#kenapa">Keunggulan</a></li>
+      <li><a href="#ulasan">Ulasan</a></li>
+      <li><a href="#cara">Cara Pesan</a></li>
+      <li><a href="https://wa.me/6281272004197?text=Halo+min,+saya+mau+booking" target="_blank" class="cta">Booking Sekarang</a></li>
+    </ul>
+    <button class="nav-burger" type="button" onclick="toggleNav()" aria-expanded="false" aria-controls="site-navigation" aria-label="Buka menu navigasi">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgress"></div></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-pill rv">
+        <span class="dot-wrap"><span class="dot"></span></span>
+        Buka 24 Jam · Tersedia Sekarang
+      </div>
+      <h1 class="rv rv-d1">
+        Rental Mobil <span class="grad">Premium</span><br>
+        Jakarta & Bekasi
+      </h1>
+      <p class="hero-desc rv rv-d2">
+        Pilihan cerdas untuk setiap perjalanan. Armada terawat, sopir profesional, harga transparan, dan respon kilat 24 jam — tanpa khawatir, tanpa biaya tersembunyi.
+      </p>
+      <div class="hero-cta rv rv-d3">
+        <a href="https://wa.me/6281272004197?text=Halo+min,+mau+booking+rental+mobil" class="btn-wa ripple-wrap" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat WhatsApp
+        </a>
+        <a href="tel:081272004197" class="btn-secondary ripple-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0812-7200-4197
+        </a>
+      </div>
+      <div class="hero-trust rv rv-d4">
+        <div>
+          <div class="trust-num">5.0 <span class="star">★</span></div>
+          <div class="trust-label">Rating Google<br>265+ ulasan</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div>
+          <div class="trust-num">24/7</div>
+          <div class="trust-label">Layanan<br>Non-stop</div>
+        </div>
+        <div class="trust-divider"></div>
+        <div>
+          <div class="trust-num">7K+</div>
+          <div class="trust-label">Followers<br>Instagram</div>
+        </div>
+      </div>
+      <div class="hero-badges rv rv-d5">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          Rekening resmi terverifikasi
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1.1-1.79l-7-3.5a2 2 0 0 0-1.8 0l-7 3.5A2 2 0 0 0 3 8v8a2 2 0 0 0 1.1 1.79l7 3.5a2 2 0 0 0 1.8 0l7-3.5A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 11.5 20.7 7"/><path d="M12 21.5v-10"/></svg>
+          Armada bersih dan rutin servis
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual rv rv-d2">
+      <div class="float-card top">
+        <div class="fc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="fc-text">
+          <div class="stars">★★★★★</div>
+          <div class="top-line">5.0 / 5.0</div>
+          <div class="bottom-line">Google Rating</div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-img">
+          <img id="heroCar"
+               src="https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=900&q=80&auto=format&fit=crop"
+               alt="Toyota Hiace Premio"
+               loading="eager">
+          <div class="hero-img-overlay"></div>
+        </div>
+        <div class="hero-card-meta">
+          <div>
+            <div class="hcm-name" id="heroCarName">Toyota Hiace Premio</div>
+            <div class="hcm-sub" id="heroCarSub">7 Kursi · Premium Van</div>
+          </div>
+          <div class="hcm-status">Tersedia</div>
+        </div>
+      </div>
+
+      <div class="float-card bottom">
+        <div class="fc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="fc-text">
+          <div class="top-line">24 Jam</div>
+          <div class="bottom-line">Selalu Tersedia</div>
+        </div>
+      </div>
+
+      <div class="hero-thumbs">
+        <div class="thumb active" onclick="switchCar(0, this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><line x1="3" y1="14" x2="21" y2="14"/><line x1="9" y1="6" x2="9" y2="14"/></svg>
+          Hiace
+        </div>
+        <div class="thumb" onclick="switchCar(1, this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1.5-7H6.5L5 17zM7 17v2m10-2v2M9 10V7h6v3"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>
+          SUV
+        </div>
+        <div class="thumb" onclick="switchCar(2, this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="14" rx="2"/><line x1="4" y1="14" x2="20" y2="14"/><line x1="9" y1="4" x2="9" y2="14"/></svg>
+          Elf
+        </div>
+        <div class="thumb" onclick="switchCar(3, this)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14l-1-6H6L5 17zm1-6l1.5-3h9L18 11M7 17v2m10-2v2"/><circle cx="8" cy="17" r="1.5"/><circle cx="16" cy="17" r="1.5"/></svg>
+          Innova
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num"><span class="count-up" data-count="5.0" data-decimals="1">0.0</span> ★</div><div class="stat-lbl">Rating Google</div></div>
+    <div class="stat"><div class="stat-num"><span class="count-up" data-count="265">0</span>+</div><div class="stat-lbl">Ulasan Verified</div></div>
+    <div class="stat"><div class="stat-num"><span class="count-up" data-count="24">0</span>/7</div><div class="stat-lbl">Layanan Non-Stop</div></div>
+    <div class="stat"><div class="stat-num"><span class="count-up" data-count="7.6" data-decimals="1">0.0</span>K+</div><div class="stat-lbl">Followers IG</div></div>
+    <div class="stat"><div class="stat-num"><span class="count-up" data-count="100">0</span>%</div><div class="stat-lbl">Pelanggan Puas</div></div>
+  </div>
+</div>
+
+<!-- MASALAH / SOLUSI -->
+<section class="sec" id="masalah">
+  <div class="sec-inner">
+    <div class="eyebrow rv">Mengapa Choky?</div>
+    <h2 class="sec-title rv">Masalah Umum Saat <span class="grad">Rental Mobil</span><br>— Dan Solusinya</h2>
+    <p class="sec-desc rv">Kami mengerti kekhawatiran Anda. Itulah mengapa setiap detail layanan kami dirancang untuk memberi Anda ketenangan pikiran.</p>
+
+    <div class="ps-grid">
+      <div class="pain-list">
+        <div class="pain rv rv-d1">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <h4>Takut Ditipu & Tidak Aman</h4>
+            <p>Banyak rental menggunakan nomor tidak resmi dan rekening tidak jelas. Anda tidak tahu siapa yang Anda bayar.</p>
+          </div>
+        </div>
+        <div class="pain rv rv-d2">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Respon Lambat & Tidak Pasti</h4>
+            <p>Menunggu konfirmasi berjam-jam hingga berhari-hari. Booking tidak tentu, rencana perjalanan jadi kacau.</p>
+          </div>
+        </div>
+        <div class="pain rv rv-d3">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div>
+            <h4>Kendaraan Tidak Terawat</h4>
+            <p>Mobil kotor, AC mati di tengah jalan, atau ban kempes. Perjalanan jadi tidak nyaman dan berisiko.</p>
+          </div>
+        </div>
+        <div class="pain rv rv-d4">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <h4>Biaya Tersembunyi Mendadak</h4>
+            <p>Harga yang dikutip tidak sesuai tagihan akhir. Muncul berbagai biaya tambahan yang tidak pernah diinfokan di awal.</p>
+          </div>
+        </div>
+        <div class="pain rv rv-d5">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Driver Tidak Tahu Rute</h4>
+            <p>Sopir tidak hafal jalan Jakarta-Bekasi, sering nyasar, membuat perjalanan lebih lama dan boros BBM.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution rv">
+        <div class="sol-content">
+          <div class="sol-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Solusi Choky Rental
+          </div>
+          <h3>Semua Teratasi<br><span class="grad">Dengan Kami</span></h3>
+          <p>Kami membangun Choky Rental Solutions dengan satu misi: memberikan pengalaman rental mobil yang aman, nyaman, dan tanpa stres. Setiap detail kami perhatikan.</p>
+          <div class="sol-list">
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Nomor & rekening resmi atas nama ZAINAL CANDRA</div>
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Respon WhatsApp dalam hitungan menit, 24 jam</div>
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Armada rutin diservis, bersih & terawat prima</div>
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Harga transparan, tanpa biaya tersembunyi</div>
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Driver berpengalaman, hafal rute Jakarta-Bekasi</div>
+            <div class="sol-item"><div class="sol-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div> Rating 5.0 Google dari 265+ ulasan nyata</div>
+          </div>
+          <a href="https://wa.me/6281272004197?text=Halo+min,+mau+tanya+tentang+rental" class="sol-cta ripple-wrap" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Konsultasi Gratis Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARMADA -->
+<section class="sec" id="armada">
+  <div class="sec-inner">
+    <div class="fleet-head">
+      <div>
+        <div class="eyebrow rv">Pilihan Kendaraan</div>
+        <h2 class="sec-title rv">Armada <span class="grad">Premium</span><br>Siap Melayani Anda</h2>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" onclick="filterFleet('all',this)">Semua</button>
+      <button class="filter" onclick="filterFleet('mpv',this)">MPV / Van</button>
+      <button class="filter" onclick="filterFleet('suv',this)">SUV</button>
+      <button class="filter" onclick="filterFleet('minibus',this)">Minibus</button>
+      <button class="filter" onclick="filterFleet('sedan',this)">Sedan / City</button>
+    </div>
+
+    <div class="fleet-grid">
+
+      <div class="car rv rv-d1" data-type="mpv">
+        <div class="car-img">
+          <img src="https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=600&q=80&auto=format&fit=crop" alt="Toyota Hiace Premio" loading="lazy">
+          <div class="car-tag">Luxury</div>
+        </div>
+        <div class="car-body">
+          <h3>Toyota Hiace Premio</h3>
+          <p class="car-desc">Van premium 7 kursi besar. Ideal untuk rombongan keluarga, perjalanan korporat, dan group travel dengan standar tinggi.</p>
+          <div class="car-specs">
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 7 Orang</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M5 12l7-7 7 7"/><path d="M5 12l7 7 7-7"/></svg> Full AC</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M9 6V4a3 3 0 0 1 6 0v2"/></svg> Bagasi Luas</div>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">Hubungi Kami <small>/ hari</small></div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Hiace+Premio" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car rv rv-d2" data-type="mpv">
+        <div class="car-img">
+          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80&auto=format&fit=crop" alt="Toyota Innova" loading="lazy">
+          <div class="car-tag">Premium</div>
+        </div>
+        <div class="car-body">
+          <h3>Toyota Innova</h3>
+          <p class="car-desc">MPV andalan Indonesia. Nyaman untuk perjalanan keluarga maupun bisnis, dengan kabin luas dan ride quality terbaik.</p>
+          <div class="car-specs">
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 7 Orang</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> AC Dingin</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg> Multimedia</div>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">Hubungi Kami <small>/ hari</small></div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Innova" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car rv rv-d3" data-type="suv">
+        <div class="car-img">
+          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80&auto=format&fit=crop" alt="Toyota Rush" loading="lazy">
+          <div class="car-tag">SUV</div>
+        </div>
+        <div class="car-body">
+          <h3>Toyota Rush / Daihatsu Terios</h3>
+          <p class="car-desc">SUV compact tangguh. Ground clearance tinggi, cocok untuk berbagai medan termasuk luar kota dan pegunungan.</p>
+          <div class="car-specs">
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 5-7 Orang</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></svg> Irit BBM</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg> Segala Medan</div>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">Hubungi Kami <small>/ hari</small></div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+SUV+Rush" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car rv rv-d1" data-type="minibus">
+        <div class="car-img">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&q=80&auto=format&fit=crop" alt="Isuzu Elf" loading="lazy">
+          <div class="car-tag">Minibus</div>
+        </div>
+        <div class="car-body">
+          <h3>Isuzu Elf</h3>
+          <p class="car-desc">Minibus kapasitas besar. Ideal untuk rombongan wisata, shuttle bandara grup, perjalanan dinas team, atau hajatan.</p>
+          <div class="car-specs">
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> 10-15 Orang</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg> AC Kuat</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="14" rx="2"/></svg> Kap Barang</div>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">Hubungi Kami <small>/ hari</small></div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Isuzu+Elf" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car rv rv-d2" data-type="sedan">
+        <div class="car-img">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80&auto=format&fit=crop" alt="Honda Jazz" loading="lazy">
+          <div class="car-tag">City Car</div>
+        </div>
+        <div class="car-body">
+          <h3>Honda Jazz</h3>
+          <p class="car-desc">City car lincah dan irit. Sempurna untuk mobilitas harian di Jakarta & Bekasi yang padat. Mudah parkir, efisien BBM.</p>
+          <div class="car-specs">
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> 4-5 Orang</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><polygon points="12 2 20 7 4 7 12 2"/></svg> Sangat Irit</div>
+            <div class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> Lincah Kota</div>
+          </div>
+          <div class="car-foot">
+            <div class="car-price">Hubungi Kami <small>/ hari</small></div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+sewa+Honda+Jazz" class="car-btn" target="_blank">Pesan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="car custom rv rv-d3" data-type="all">
+        <div class="car-img">
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <p>Kendaraan Lain?</p>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Request Kendaraan Khusus</h3>
+          <p class="car-desc">Butuh kendaraan tertentu yang tidak ada di daftar? Kami memiliki berbagai pilihan tambahan. Konsultasikan kebutuhan Anda.</p>
+          <div class="car-foot">
+            <div class="car-price" style="color:var(--slate-400)">Negosiasi</div>
+            <a href="https://wa.me/6281272004197?text=Halo+min,+mau+tanya+kendaraan+lain" class="car-btn" target="_blank">Tanya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- KENAPA KAMI -->
+<section class="sec" id="kenapa">
+  <div class="sec-inner">
+    <div class="eyebrow rv">Keunggulan Kami</div>
+    <h2 class="sec-title rv">Kenapa Memilih<br><span class="grad">Choky Rental Solutions?</span></h2>
+    <p class="sec-desc rv">Lima alasan kuat mengapa ribuan pelanggan mempercayakan perjalanan mereka kepada kami.</p>
+
+    <div class="why-grid">
+      <div class="why rv rv-d1">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <h3>Kualitas Utama</h3>
+        <p>Pilihan bagi mereka yang menghargai kualitas tertinggi. Kendaraan selalu dalam kondisi terbaik untuk kenyamanan dan keamanan perjalanan Anda.</p>
+      </div>
+      <div class="why rv rv-d2">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Layanan 24/7</h3>
+        <p>Ketika Anda menyewa dengan kami, kami selalu ada untuk Anda. Layanan 24/7 memastikan bantuan tersedia kapan pun Anda membutuhkan.</p>
+      </div>
+      <div class="why rv rv-d3">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+        <h3>Fleksibilitas Unik</h3>
+        <p>Setiap perjalanan memiliki kebutuhan berbeda. Paket penyewaan yang dapat disesuaikan penuh memberikan fleksibilitas tak tertandingi.</p>
+      </div>
+      <div class="why rv rv-d4">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <h3>Transparansi & Kejujuran</h3>
+        <p>Harga jelas tanpa biaya tersembunyi. Anda selalu tahu apa yang Anda dapatkan ketika menyewa dengan kami.</p>
+      </div>
+      <div class="why rv rv-d5">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+        <h3>Reputasi Terpercaya</h3>
+        <p>Bangga memiliki reputasi kuat di industri ini. Testimoni pelanggan adalah bukti komitmen kami untuk layanan terbaik.</p>
+      </div>
+      <div class="why rv rv-d1">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Driver Profesional</h3>
+        <p>Sopir berpengalaman, hafal rute Jakarta-Bekasi, ramah, tepat waktu, dan siap membantu kemanapun tujuan Anda.</p>
+      </div>
+      <div class="why rv rv-d2">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Antar-Jemput Lokasi</h3>
+        <p>Layanan antar-jemput ke seluruh area Jakarta, Bekasi, dan sekitarnya. Tidak perlu repot datang ke pool.</p>
+      </div>
+      <div class="why rv rv-d3">
+        <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3>Aman & Terverifikasi</h3>
+        <p>Nomor resmi terdaftar dan rekening atas nama jelas. Tidak ada penipuan, semua dapat diverifikasi secara langsung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ULASAN -->
+<section class="sec" id="ulasan">
+  <div class="sec-inner">
+    <div class="eyebrow rv">Kata Pelanggan</div>
+    <h2 class="sec-title rv">Mereka Sudah Merasakan<br><span class="grad">Perbedaannya</span></h2>
+
+    <div class="rating-summary rv" style="margin-top: 48px;">
+      <div class="rs-content">
+        <div class="big-num">5.0</div>
+        <div class="rs-detail">
+          <div class="stars">★★★★★</div>
+          <h4>Rating Sempurna di Google Maps</h4>
+          <p>Dari 265+ ulasan pelanggan terverifikasi</p>
+        </div>
+        <div class="rs-divider"></div>
+        <div class="rs-stat"><div class="n">265+</div><div class="l">Ulasan</div></div>
+        <div class="rs-divider"></div>
+        <div class="rs-stat"><div class="n">7.6K+</div><div class="l">Followers</div></div>
+        <div class="rs-divider"></div>
+        <div class="rs-stat"><div class="n">100%</div><div class="l">Kepuasan</div></div>
+      </div>
+    </div>
+
+    <div class="reviews-rail">
+      <div class="reviews-track">
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar">SE</div>
+            <div><div class="r-name">Shane Evelina</div><div class="r-when">5 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Recommended rent car di Choky Rental Mobil. Responnya cepat, mobilnya bersih banget, drivernya baik dan sangat membantu. Terima kasih banyak.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#1A8CFF,#00A3FF);">MK</div>
+            <div><div class="r-name">Monge KC</div><div class="r-when">3 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Makasih choky rental, pelayanannya mantap. Semoga ke depannya lebih baik lagi. Sangat direkomendasikan untuk yang cari rental terpercaya.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0066FF,#1A8CFF);">AN</div>
+            <div><div class="r-name">Andi Nugroho</div><div class="r-when">2 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Sudah 3x sewa di Choky, selalu puas! Mobilnya bersih dan terawat. Sopirnya ramah, tepat waktu. Pasti bakal repeat order.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0052CC,#0066FF);">DW</div>
+            <div><div class="r-name">Dewi Wulandari</div><div class="r-when">1 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Pakai Hiace Premio untuk acara keluarga besar. Mobilnya besar, nyaman, AC dingin banget. Sopir sangat membantu. Highly recommended.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#1A8CFF,#4DC4FF);">BF</div>
+            <div><div class="r-name">Budi Firmansyah</div><div class="r-when">6 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Respon cepat, harga bersaing, mobil prima. Sangat membantu perjalanan bisnis ke luar kota. Profesional dan terpercaya.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0066FF,#00A3FF);">NL</div>
+            <div><div class="r-name">Nita Lestari</div><div class="r-when">4 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Booking via WA mudah banget, langsung direspon. Mobil datang tepat waktu, kondisi prima. Top notch service.</div>
+        </div>
+        <!-- Duplicates for seamless loop -->
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar">SE</div>
+            <div><div class="r-name">Shane Evelina</div><div class="r-when">5 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Recommended rent car di Choky Rental Mobil. Responnya cepat, mobilnya bersih banget, drivernya baik dan sangat membantu.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#1A8CFF,#00A3FF);">MK</div>
+            <div><div class="r-name">Monge KC</div><div class="r-when">3 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Makasih choky rental, pelayanannya mantap. Semoga ke depannya lebih baik lagi. Sangat direkomendasikan.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0066FF,#1A8CFF);">AN</div>
+            <div><div class="r-name">Andi Nugroho</div><div class="r-when">2 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Sudah 3x sewa di Choky, selalu puas! Mobilnya bersih dan terawat. Sopirnya ramah, tepat waktu.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0052CC,#0066FF);">DW</div>
+            <div><div class="r-name">Dewi Wulandari</div><div class="r-when">1 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Pakai Hiace Premio untuk acara keluarga besar. Mobilnya besar, nyaman, AC dingin banget. Highly recommended.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#1A8CFF,#4DC4FF);">BF</div>
+            <div><div class="r-name">Budi Firmansyah</div><div class="r-when">6 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Respon cepat, harga bersaing, mobil prima. Sangat membantu perjalanan bisnis ke luar kota.</div>
+        </div>
+        <div class="review">
+          <div class="r-head">
+            <div class="r-avatar" style="background:linear-gradient(135deg,#0066FF,#00A3FF);">NL</div>
+            <div><div class="r-name">Nita Lestari</div><div class="r-when">4 bulan lalu · Google Maps</div></div>
+          </div>
+          <div class="r-stars">★★★★★</div>
+          <div class="r-text">Booking via WA mudah banget, langsung direspon. Mobil datang tepat waktu, kondisi prima.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA PESAN -->
+<section class="sec" id="cara">
+  <div class="sec-inner">
+    <div class="eyebrow rv">Cara Booking</div>
+    <h2 class="sec-title rv">Pesan Dalam <span class="grad">3 Langkah</span><br>Yang Sangat Mudah</h2>
+    <p class="sec-desc rv">Tidak perlu ribet. Dalam hitungan menit kendaraan idaman Anda siap meluncur.</p>
+
+    <div class="steps">
+      <div class="step rv rv-d1">
+        <div class="step-num">1</div>
+        <h3>Hubungi via WhatsApp</h3>
+        <p>Chat kami di 0812-7200-4197. Tim kami langsung merespon, membantu Anda memilih kendaraan dan memastikan ketersediaan sesuai jadwal.</p>
+        <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="step rv rv-d2">
+        <div class="step-num">2</div>
+        <h3>Konfirmasi & Bayar DP</h3>
+        <p>Tentukan tanggal, durasi, dan tujuan perjalanan. Bayar DP melalui rekening resmi atas nama Zainal Candra untuk mengunci booking Anda.</p>
+        <svg class="step-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="step rv rv-d3">
+        <div class="step-num">3</div>
+        <h3>Nikmati Perjalanan</h3>
+        <p>Kendaraan diantarkan ke lokasi Anda tepat waktu dan kondisi prima. Duduk santai dan nikmati perjalanan bersama Choky.</p>
+      </div>
+    </div>
+
+    <div class="bank rv">
+      <div class="bank-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Rekening Resmi Choky Rental Solutions
+      </div>
+      <div class="bank-list">
+        <div class="bank-item"><div class="b-name">BCA</div><div class="b-acc">6630844931</div></div>
+        <div class="bank-item"><div class="b-name">BCA</div><div class="b-acc">0663391779</div></div>
+        <div class="bank-item"><div class="b-name">Mandiri</div><div class="b-acc">1670000536523</div></div>
+      </div>
+      <div class="bank-name">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Atas Nama: ZAINAL CANDRA
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="sec" id="area">
+  <div class="sec-inner">
+    <div class="eyebrow rv">Jangkauan Layanan</div>
+    <h2 class="sec-title rv">Kami Melayani<br><span class="grad">Seluruh Jabodetabek</span></h2>
+    <p class="sec-desc rv">Dari pusat kota hingga luar kota, armada kami siap menjangkau tujuan Anda.</p>
+
+    <div class="areas rv">
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Pusat</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Selatan</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Barat</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Utara</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Jakarta Timur</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi Kota</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi Barat</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bekasi Timur</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Depok</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Tangerang Selatan</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bogor</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bandung</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bandara Soetta</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bandara Halim PK</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Pelabuhan Tg. Priok</div>
+      <div class="area-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Luar Kota (Request)</div>
+    </div>
+
+    <div class="address-card rv">
+      <div class="addr-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <h4>Alamat Kami</h4>
+        <p>Jl. Bintara 6 No.79M, RT.001/RW.006, Bintara,<br>Kec. Bekasi Barat, Kota Bekasi, Jawa Barat 17134</p>
+      </div>
+      <a href="https://maps.google.com/?q=Choky+Rental+Mobil+Jakarta+Bekasi" target="_blank" class="maps-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+        Lihat di Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-box">
+    <div class="cta-content">
+      <h2>Siap untuk Perjalanan<br>Terbaik Anda?</h2>
+      <p>Explore with Confidence. Rent with Choky. Hubungi kami sekarang dan dapatkan penawaran terbaik untuk perjalanan Anda.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281272004197?text=Halo+min,+saya+mau+booking+rental+mobil" class="btn-cta-wa ripple-wrap" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat WhatsApp Sekarang
+        </a>
+        <a href="tel:081272004197" class="btn-cta-call ripple-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Telepon Langsung
+        </a>
+      </div>
+      <div class="cta-meta">
+        <div class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <strong>0812-7200-4197</strong>
+        </div>
+        <div class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <strong>0812-8426-5763</strong>
+        </div>
+        <div class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Bintara, Bekasi Barat</strong>
+        </div>
+        <div class="cta-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong>Buka 24 Jam</strong>
+        </div>
+      </div>
+      <div class="cta-trust">
+        <div class="cta-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          Booking aman dengan rekening resmi
+        </div>
+        <div class="cta-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="m12 3 9 9-9 9"/><path d="m3 3 9 9-9 9"/></svg>
+          Fast response untuk kebutuhan mendadak
+        </div>
+        <div class="cta-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h2"/><path d="M15 9h6v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2Z"/><path d="M5 8h4"/><path d="M5 12h4"/></svg>
+          Bukti sosial nyata dari pelanggan
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">
+      <a href="#" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M5 17l1.5-5.5a3 3 0 0 1 2.85-2.5h5.3a3 3 0 0 1 2.85 2.5L19 17M5 17v2m14-2v2M7 13h10"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+        </div>
+        <div>
+          <div class="logo-text">Choky<span>Rental</span></div>
+          <div class="logo-sub">Jakarta & Bekasi</div>
+        </div>
+      </a>
+      <p>Penyedia jasa rental mobil premium yang menghadirkan kemewahan dan kenyamanan dalam setiap perjalanan. Berkendara dengan gaya bersama kami.</p>
+      <div class="f-socials">
+        <a href="https://www.instagram.com/chokyrentalsolutions" target="_blank" class="f-soc" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://wa.me/6281272004197" target="_blank" class="f-soc" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+        </a>
+        <a href="tel:081272004197" class="f-soc" aria-label="Phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Layanan</h5>
+      <ul>
+        <li><a href="#armada">Sewa Harian</a></li>
+        <li><a href="#armada">Sewa Mingguan</a></li>
+        <li><a href="#armada">Sewa + Driver</a></li>
+        <li><a href="#armada">Lepas Kunci</a></li>
+        <li><a href="#armada">Shuttle Bandara</a></li>
+        <li><a href="#armada">Wisata Grup</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5>Informasi</h5>
+      <ul>
+        <li><a href="#kenapa">Kenapa Kami</a></li>
+        <li><a href="#ulasan">Ulasan</a></li>
+        <li><a href="#cara">Cara Booking</a></li>
+        <li><a href="#area">Area Layanan</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h5>Kontak</h5>
+      <ul>
+        <li><a href="tel:081272004197">0812-7200-4197</a></li>
+        <li><a href="tel:081284265763">0812-8426-5763</a></li>
+        <li><a href="https://wa.me/6281272004197" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/chokyrentalsolutions" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <span>© 2025 Choky Rental Solutions. All rights reserved.</span>
+    <span>Jl. Bintara 6 No.79M, Bekasi Barat</span>
+  </div>
+</footer>
+
+<script>
+const navbar = document.getElementById('navbar');
+const scrollProgress = document.getElementById('scrollProgress');
+const navLinks = document.querySelector('.nav-links');
+const navToggle = document.querySelector('.nav-burger');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function updateScrollUI() {
+  const scrollTop = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+
+  navbar.classList.toggle('scrolled', scrollTop > 40);
+  if (scrollProgress) {
+    scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+  }
+}
+
+window.addEventListener('scroll', updateScrollUI, { passive: true });
+updateScrollUI();
+
+// Reveal on scroll
+const rvEls = document.querySelectorAll('.rv');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+rvEls.forEach((el) => revealObserver.observe(el));
+
+const countEls = document.querySelectorAll('.count-up');
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+
+    const el = entry.target;
+    const target = Number(el.dataset.count || 0);
+    const decimals = Number(el.dataset.decimals || 0);
+    const duration = reduceMotion ? 0 : 1400;
+    const start = performance.now();
+
+    const formatValue = (value) => (
+      decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString()
+    );
+
+    const step = (now) => {
+      if (!duration) {
+        el.textContent = formatValue(target);
+        return;
+      }
+
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatValue(target * eased);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.6 });
+countEls.forEach((el) => countObserver.observe(el));
+
+// Fleet filter
+function filterFleet(type, btn) {
+  document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.car').forEach(card => {
+    const ct = card.dataset.type;
+    const show = type === 'all' || ct === type || ct === 'all';
+    if (show) {
+      card.style.display = '';
+      requestAnimationFrame(() => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(12px)';
+        requestAnimationFrame(() => {
+          card.style.transition = 'opacity 0.4s, transform 0.4s';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        });
+      });
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Hero car switcher
+const cars = [
+  { img: 'https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=900&q=80&auto=format&fit=crop', name: 'Toyota Hiace Premio', sub: '7 Kursi · Premium Van' },
+  { img: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=900&q=80&auto=format&fit=crop', name: 'Toyota Rush / Terios', sub: '5-7 Orang · SUV Tangguh' },
+  { img: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=900&q=80&auto=format&fit=crop', name: 'Isuzu Elf', sub: '10-15 Orang · Minibus' },
+  { img: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80&auto=format&fit=crop', name: 'Toyota Innova', sub: '7 Orang · Premium MPV' }
+];
+
+function switchCar(idx, btn) {
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const car = document.getElementById('heroCar');
+  const name = document.getElementById('heroCarName');
+  const sub = document.getElementById('heroCarSub');
+  car.style.opacity = '0';
+  car.style.transform = 'scale(0.96)';
+  car.style.transition = 'opacity 0.3s, transform 0.4s';
+  setTimeout(() => {
+    car.src = cars[idx].img;
+    name.textContent = cars[idx].name;
+    sub.textContent = cars[idx].sub;
+    car.style.opacity = '1';
+    car.style.transform = 'scale(1)';
+  }, 250);
+}
+
+// Mobile nav
+let mobileOpen = false;
+function toggleNav() {
+  mobileOpen = !mobileOpen;
+  if (mobileOpen) {
+    navLinks.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);padding:20px 24px;gap:4px;z-index:998;border-bottom:1px solid var(--slate-100);box-shadow:0 12px 32px rgba(15,23,42,0.08);align-items:stretch;';
+  } else {
+    navLinks.style.cssText = '';
+  }
+  navToggle.setAttribute('aria-expanded', String(mobileOpen));
+  navToggle.setAttribute('aria-label', mobileOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+}
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    if (mobileOpen && window.innerWidth <= 768) {
+      toggleNav();
+    }
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && mobileOpen) {
+    toggleNav();
+  }
+});
+
+document.querySelectorAll('.ripple-wrap').forEach((el) => {
+  el.addEventListener('click', (event) => {
+    const rect = el.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const ripple = document.createElement('span');
+
+    ripple.className = 'ripple';
+    ripple.style.width = `${size}px`;
+    ripple.style.height = `${size}px`;
+    ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
+
+    el.querySelectorAll('.ripple').forEach((node) => node.remove());
+    el.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+  });
+});
+</script>
+</body>
+</html>
